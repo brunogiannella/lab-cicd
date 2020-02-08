@@ -10,7 +10,7 @@ pipeline {
                sh 'mvn -B -DskipTests clean package'
 			   archiveArtifacts 'target/*.jar'
             }
-        },
+        }
 	stage('Tests') {
 	    agent {
                 docker { image 'maven:3-alpine' }
